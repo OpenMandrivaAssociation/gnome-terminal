@@ -1,15 +1,12 @@
 Summary: GNOME terminal
 Name: gnome-terminal
 Version: 2.18.1
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Source1: gnome-terminal-32.png
 Source2: gnome-terminal-16.png
 # (fc) 2.0.0-2mdk add -geometry support
 Patch0:  gnome-terminal-2.6.1-geometry.patch
-#gw http://bugzilla.gnome.org/show_bug.cgi?id=138609
-#fix next-tab on last tab
-Patch1: gnome-terminal-2.13.0-next-tab.patch
 # (fc) 2.8.0-2mdk change default background (grey on black)
 Patch2:	gnome-terminal-2.10.0-background.patch
 License: GPL
@@ -36,7 +33,6 @@ GNOME Terminal
 %prep
 %setup -q
 %patch0 -p1 -b .geometry
-%patch1 -p1 -b .next-tab
 %patch2 -p1 -b .background
 
 %build
