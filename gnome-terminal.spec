@@ -48,14 +48,8 @@ rm -rf $RPM_BUILD_ROOT
 GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
 rm -rf %buildroot/var
 
-mkdir -p $RPM_BUILD_ROOT%{_menudir}
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name} 
-?package(%{name}): command="%{_bindir}/gnome-terminal" icon="gnome-terminal.png" longtitle="Terminal of the GNOME desktop" title="GNOME Terminal" needs="gnome" section="System/Terminals" startup_notify="true" xdg="true"
-EOF
-
 desktop-file-install --vendor="" \
   --remove-category="Application" \
-  --add-category="X-MandrivaLinux-System-Terminals" \
   --add-only-show-in="GNOME" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
@@ -99,7 +93,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/pixmaps/*
 %dir %{_datadir}/omf/gnome-terminal
 %{_datadir}/omf/gnome-terminal/*-C.omf
-%{_menudir}/*
 %{_iconsdir}/*.png
 %{_liconsdir}/*.png
 %{_miconsdir}/*.png
