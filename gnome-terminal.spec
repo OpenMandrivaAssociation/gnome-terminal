@@ -13,7 +13,6 @@ Patch3: gnome-terminal-2.18.2-desktopentry.patch
 License: GPL
 URL: http://www.gnome.org/
 Group: Graphical desktop/GNOME
-BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 Requires: gtk+2.0 >= 2.5.4
 BuildRequires: gettext
 BuildRequires: vte-devel >= 0.13.4
