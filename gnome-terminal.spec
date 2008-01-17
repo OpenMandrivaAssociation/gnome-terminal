@@ -1,7 +1,7 @@
 Summary: GNOME terminal
 Name: gnome-terminal
 Version: 2.21.5
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Source1: gnome-terminal-32.png
 Source2: gnome-terminal-16.png
@@ -85,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(-,root,root)
-%doc ChangeLog AUTHORS README NEWS HACKING
+%doc AUTHORS README NEWS HACKING
 %{_sysconfdir}/gconf/schemas/*
 %{_bindir}/*
 %{_libdir}/bonobo/servers/*
