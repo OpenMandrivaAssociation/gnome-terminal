@@ -1,6 +1,6 @@
 Summary: GNOME terminal
 Name: gnome-terminal
-Version: 2.21.91
+Version: 2.21.91.1
 Release: %mkrel 1
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Source1: gnome-terminal-32.png
