@@ -1,7 +1,7 @@
 Summary: GNOME terminal
 Name: gnome-terminal
-Version: 2.22.0
-Release: %mkrel 2
+Version: 2.22.1
+Release: %mkrel 1
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Source1: gnome-terminal-32.png
 Source2: gnome-terminal-16.png
@@ -9,8 +9,6 @@ Source2: gnome-terminal-16.png
 Patch0:  gnome-terminal-2.6.1-geometry.patch
 # (fc) 2.8.0-2mdk change default background (grey on black)
 Patch2:	gnome-terminal-2.10.0-background.patch
-# (fc) 2.22.0-2mdv various SVN fixes
-Patch3: gnome-terminal-2.22.0-svnfixes.patch
 License: GPL
 URL: http://www.gnome.org/
 Group: Graphical desktop/GNOME
@@ -37,7 +35,6 @@ GNOME Terminal
 %setup -q
 %patch0 -p1 -b .geometry
 %patch2 -p1 -b .background
-%patch3 -p1 -b .svnfixes
 
 %build
 %configure2_5x --with-widget=vte
