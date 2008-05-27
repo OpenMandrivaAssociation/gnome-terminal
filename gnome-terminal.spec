@@ -29,7 +29,7 @@ Requires(post): scrollkeeper >= 0.3
 Requires(postun): scrollkeeper >= 0.3
 
 %description
-GNOME Terminal
+This is the GNOME terminal emulator application.
 
 %prep
 %setup -q
