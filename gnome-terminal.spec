@@ -65,18 +65,22 @@ done
 %define schemas gnome-terminal
 
 %post
+%if %mdkversion < 200900
 %update_scrollkeeper
 %post_install_gconf_schemas %{schemas}
 %{update_menus}
+%endif
 if [ "$1" = "2" ]; then
 		update-alternatives --remove xvt %{_bindir}/gnome-terminal
 fi
 
 %preun
 %preun_uninstall_gconf_schemas %{schemas}
+%if %mdkversion < 200900
 %postun
 %clean_scrollkeeper
 %{clean_menus}
+%endif
 
 %clean
 rm -rf $RPM_BUILD_ROOT
