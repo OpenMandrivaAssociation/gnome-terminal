@@ -1,6 +1,6 @@
 Summary: GNOME terminal
 Name: gnome-terminal
-Version: 2.22.2
+Version: 2.22.3
 Release: %mkrel 1
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 Source1: gnome-terminal-32.png
@@ -22,7 +22,7 @@ BuildRequires: libgnomeui2-devel
 BuildRequires: libglade2.0-devel
 BuildRequires: startup-notification-devel >= 0.8
 BuildRequires: scrollkeeper
-BuildRequires: perl-XML-Parser
+BuildRequires: intltool
 BuildRequires: gnome-doc-utils libxslt-proc
 BuildRequires: desktop-file-utils
 Requires(post): scrollkeeper >= 0.3
