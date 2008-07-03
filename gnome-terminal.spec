@@ -1,15 +1,14 @@
 Summary: GNOME terminal
 Name: gnome-terminal
-Version: 2.22.3
+Version: 2.23.4.2
 Release: %mkrel 1
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
-Source1: gnome-terminal-32.png
-Source2: gnome-terminal-16.png
 # (fc) 2.0.0-2mdk add -geometry support
 Patch0:  gnome-terminal-2.6.1-geometry.patch
+Patch1: gnome-terminal-2.23.4.2-glib-include.patch
 # (fc) 2.8.0-2mdk change default background (grey on black)
 Patch2:	gnome-terminal-2.10.0-background.patch
-License: GPL
+License: GPLv2+
 URL: http://www.gnome.org/
 Group: Graphical desktop/GNOME
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
@@ -22,7 +21,7 @@ BuildRequires: libgnomeui2-devel
 BuildRequires: libglade2.0-devel
 BuildRequires: startup-notification-devel >= 0.8
 BuildRequires: scrollkeeper
-BuildRequires: intltool
+BuildRequires: intltool >= 0.39.99
 BuildRequires: gnome-doc-utils libxslt-proc
 BuildRequires: desktop-file-utils
 Requires(post): scrollkeeper >= 0.3
@@ -35,6 +34,9 @@ This is the GNOME terminal emulator application.
 %setup -q
 %patch0 -p1 -b .geometry
 %patch2 -p1 -b .background
+
+%patch1 -p1
+automake
 
 %build
 %configure2_5x --with-widget=vte
@@ -52,10 +54,6 @@ desktop-file-install --vendor="" \
   --add-only-show-in="GNOME" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
-mkdir -p $RPM_BUILD_ROOT{%_miconsdir,%_liconsdir}
-cp -f %{SOURCE1} $RPM_BUILD_ROOT%{_iconsdir}/gnome-terminal.png
-cp -f %{SOURCE2} $RPM_BUILD_ROOT%{_miconsdir}/gnome-terminal.png
-cp -f $RPM_BUILD_ROOT/%{_datadir}/pixmaps/gnome-terminal.png $RPM_BUILD_ROOT%{_liconsdir}/gnome-terminal.png
 
 %find_lang %{name} --with-gnome
 for omf in %buildroot%_datadir/omf/%name/%name-??*.omf;do 
@@ -93,10 +91,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/bonobo/servers/*
 %{_datadir}/applications/*
 %{_datadir}/gnome-terminal
-%{_datadir}/pixmaps/*
 %dir %{_datadir}/omf/gnome-terminal
 %{_datadir}/omf/gnome-terminal/*-C.omf
-%{_iconsdir}/*.png
-%{_liconsdir}/*.png
-%{_miconsdir}/*.png
 
