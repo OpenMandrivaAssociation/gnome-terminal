@@ -1,10 +1,10 @@
 Summary: GNOME terminal
 Name: gnome-terminal
-Version: 2.24.2
+Version: 2.25.3
 Release: %mkrel 1
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 # (fc) 2.0.0-2mdk add -geometry support
-Patch0:  gnome-terminal-2.6.1-geometry.patch
+Patch0:  gnome-terminal-2.25.3-geometry.patch
 # (fc) 2.8.0-2mdk change default background (grey on black)
 Patch2:	gnome-terminal-2.10.0-background.patch
 License: GPLv2+
@@ -84,7 +84,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README NEWS HACKING
 %{_sysconfdir}/gconf/schemas/*
 %{_bindir}/*
-%{_libdir}/bonobo/servers/*
 %{_datadir}/applications/*
 %{_datadir}/gnome-terminal
 %dir %{_datadir}/omf/gnome-terminal
