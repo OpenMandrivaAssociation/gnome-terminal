@@ -1,12 +1,14 @@
 Summary: GNOME terminal
 Name: gnome-terminal
 Version: 2.26.0
-Release: %mkrel 1
+Release: %mkrel 2
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 # (fc) 2.0.0-2mdk add -geometry support
 Patch0:  gnome-terminal-2.25.3-geometry.patch
 # (fc) 2.8.0-2mdk change default background (grey on black)
 Patch2:	gnome-terminal-2.10.0-background.patch
+# (fc) 2.26.0-2mdv various bug fixes (SVN)
+Patch3: gnome-terminal-2.26.0-svnfixes.patch
 License: GPLv2+
 URL: http://www.gnome.org/
 Group: Graphical desktop/GNOME
@@ -33,9 +35,10 @@ This is the GNOME terminal emulator application.
 %setup -q
 %patch0 -p1 -b .geometry
 %patch2 -p1 -b .background
+%patch3 -p1 -b .svnfixes
 
 %build
-%configure2_5x --with-widget=vte
+%configure2_5x 
 
 %make
 
