@@ -1,7 +1,7 @@
 Summary: GNOME terminal
 Name: gnome-terminal
-Version: 2.26.2
-Release: %mkrel 3
+Version: 2.26.3
+Release: %mkrel 1
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 # (fc) 2.0.0-2mdk add -geometry support
 Patch0:  gnome-terminal-2.25.3-geometry.patch
@@ -33,6 +33,8 @@ This is the GNOME terminal emulator application.
 %setup -q
 %patch0 -p1 -b .geometry
 %patch2 -p1 -b .background
+#gw contains wrong path:
+rm src/terminal-type-builtins.c
 
 %build
 %configure2_5x 
