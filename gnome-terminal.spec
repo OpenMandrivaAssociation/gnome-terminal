@@ -34,6 +34,7 @@ This is the GNOME terminal emulator application.
 %patch0 -p1 -b .geometry
 %patch2 -p1 -b .background
 #gw contains wrong path:
+#http://bugzilla.gnome.org/show_bug.cgi?id=587305
 rm src/terminal-type-builtins.c
 
 %build
