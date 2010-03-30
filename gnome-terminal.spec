@@ -1,6 +1,6 @@
 Summary: GNOME terminal
 Name: gnome-terminal
-Version: 2.29.92
+Version: 2.30.0
 Release: %mkrel 1
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 # (fc) 2.0.0-2mdk add -geometry support
@@ -13,7 +13,7 @@ Group: Graphical desktop/GNOME
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 Requires: gtk+2.0 >= 2.5.4
 BuildRequires: gettext
-BuildRequires: vte-devel >= 0.23.5
+BuildRequires: vte-devel >= 0.24
 BuildRequires: gtk+2-devel >= 2.5.4
 BuildRequires: glib2-devel >= 2.15.0
 BuildRequires: libgnomeui2-devel
