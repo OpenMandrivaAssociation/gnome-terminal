@@ -17,6 +17,7 @@ BuildRequires: vte-devel >= 0.25.91
 BuildRequires: gtk+2-devel >= 2.5.4
 BuildRequires: glib2-devel >= 2.15.0
 BuildRequires: libGConf2-devel
+BuildRequires: libsm-devel
 BuildRequires: startup-notification-devel >= 0.8
 BuildRequires: scrollkeeper
 BuildRequires: intltool >= 0.39.99
