@@ -1,6 +1,6 @@
 Summary: GNOME terminal
 Name: gnome-terminal
-Version: 2.33.3
+Version: 3.0.0
 Release: %mkrel 1
 Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 # (fc) 2.0.0-2mdk add -geometry support
@@ -13,18 +13,19 @@ Group: Graphical desktop/GNOME
 BuildRoot: %{_tmppath}/%{name}-%{version}-buildroot
 Requires: gtk+2.0 >= 2.5.4
 BuildRequires: gettext
-BuildRequires: vte-devel >= 0.25.91
-BuildRequires: gtk+2-devel >= 2.5.4
-BuildRequires: glib2-devel >= 2.15.0
-BuildRequires: libGConf2-devel
+BuildRequires: vte-devel >= 0.26.0
+BuildRequires: gtk+2-devel >= 2.18.0
+BuildRequires: glib2-devel >= 2.26.0
+BuildRequires: libGConf2-devel >= 2.31.3
+BuildRequires: GConf2
+BuildRequires: gsettings-desktop-schemas-devel >= 0.1.0
 BuildRequires: libsm-devel
+BuildRequires: libice-devel
 BuildRequires: startup-notification-devel >= 0.8
 BuildRequires: scrollkeeper
 BuildRequires: intltool >= 0.39.99
 BuildRequires: gnome-doc-utils libxslt-proc
 BuildRequires: desktop-file-utils
-Requires(post): scrollkeeper >= 0.3
-Requires(postun): scrollkeeper >= 0.3
 
 %description
 This is the GNOME terminal emulator application.
@@ -34,46 +35,30 @@ This is the GNOME terminal emulator application.
 %apply_patches
 
 %build
-%configure2_5x 
-
+%configure2_5x --disable-schemas-install --disable-scrollkeeper --with-gtk=2.0
 %make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
-GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
-rm -rf %buildroot/var
+%makeinstall_std
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-only-show-in="GNOME" \
   --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
 
-
 %find_lang %{name} --with-gnome
 for omf in %buildroot%_datadir/omf/%name/%name-??*.omf;do 
 echo "%lang($(basename $omf|sed -e s/%name-// -e s/.omf//)) $(echo $omf|sed -e s!%buildroot!!)" >> %name.lang
 done
 
-%define schemas gnome-terminal
-
 %post
-%if %mdkversion < 200900
-%update_scrollkeeper
-%post_install_gconf_schemas %{schemas}
-%{update_menus}
-%endif
 if [ "$1" = "2" ]; then
-		update-alternatives --remove xvt %{_bindir}/gnome-terminal
+	update-alternatives --remove xvt %{_bindir}/gnome-terminal
 fi
 
 %preun
-%preun_uninstall_gconf_schemas %{schemas}
-%if %mdkversion < 200900
-%postun
-%clean_scrollkeeper
-%{clean_menus}
-%endif
+%preun_uninstall_gconf_schemas %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -87,4 +72,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome-terminal
 %dir %{_datadir}/omf/gnome-terminal
 %{_datadir}/omf/gnome-terminal/*-C.omf
-
