@@ -39,13 +39,13 @@ This is the GNOME terminal emulator application.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
   --add-only-show-in="GNOME" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
+  --dir %{buildroot}%{_datadir}/applications %{buildroot}%{_datadir}/applications/*
 
 %find_lang %{name} --with-gnome
 for omf in %buildroot%_datadir/omf/%name/%name-??*.omf;do 
@@ -61,7 +61,7 @@ fi
 %preun_uninstall_gconf_schemas %{name}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files -f %{name}.lang
 %defattr(-,root,root)
