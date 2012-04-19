@@ -1,11 +1,11 @@
 Summary: GNOME terminal
 Name: gnome-terminal
-Version: 3.2.1
+Version: 3.4.1.1
 Release: 1
 License: GPLv2+
 Group: Graphical desktop/GNOME
 URL: http://www.gnome.org/
-Source0: ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.xz
+Source0: ftp://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/3.4/%{name}-%{version}.tar.xz
 # (fc) 2.0.0-2mdk add -geometry support
 Patch0:  gnome-terminal-2.25.3-geometry.patch
 # (fc) 2.8.0-2mdk change default background (grey on black)
@@ -42,7 +42,6 @@ This is the GNOME terminal emulator application.
 %make
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
 %find_lang %{name} --with-gnome
@@ -58,4 +57,3 @@ fi
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_datadir}/gnome-terminal
-
