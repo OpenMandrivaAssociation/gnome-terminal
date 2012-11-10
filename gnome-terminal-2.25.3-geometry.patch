@@ -1,0 +1,31 @@
+diff -p -up gnome-terminal-2.25.3/src/terminal.c.geometry gnome-terminal-2.25.3/src/terminal.c
+--- gnome-terminal-2.25.3/src/terminal.c.geometry	2008-12-15 20:57:29.000000000 +0100
++++ gnome-terminal-2.25.3/src/terminal.c	2008-12-18 22:22:10.000000000 +0100
+@@ -232,9 +232,27 @@ main (int argc, char **argv)
+ 
+   /* Make a NULL-terminated copy since we may need it later */
+   argv_copy = g_new (char *, argc + 1);
+   for (i = 0; i < argc; ++i)
++   {
++     /* add support for -geometry and -T from xterm 
++      * modify -e meaning when argv[0] == xvt for consistency with other
++      * terminal emulators  
++      * we are leaking these options but it is not really a problem */
++     if (!strcmp (argv [i], "-geometry")) 
++       {
++   	argv[i] = "--geometry";
++       }
++     if (!strcmp (argv [i], "-T")) 
++       {
++ 	 argv[i] = "-t";
++      }
++     if (!strcmp (argv [i], "-e") && g_str_has_suffix(argv [0],"xvt")) 
++     {
++ 	 argv[i] = "-x";
++     }
+     argv_copy [i] = argv [i];
++   }
+   argv_copy [i] = NULL;
+   argc_copy = argc;
+ 
+   startup_id = g_getenv ("DESKTOP_STARTUP_ID");

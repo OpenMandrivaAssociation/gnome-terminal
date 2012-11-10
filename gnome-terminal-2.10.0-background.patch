@@ -1,0 +1,29 @@
+--- gnome-terminal-2.10.0/src/gnome-terminal.schemas.in.background	2004-08-17 16:41:35.000000000 +0200
++++ gnome-terminal-2.10.0/src/gnome-terminal.schemas.in	2005-04-20 10:42:56.952006205 +0200
+@@ -169,7 +169,7 @@
+       <applyto>/apps/gnome-terminal/profiles/Default/foreground_color</applyto>
+       <owner>gnome-terminal</owner>
+       <type>string</type>
+-      <default>#000000</default>
++      <default>#d3d6d3</default>
+       <locale name="C">
+          <short>Default color of text in the terminal</short>
+          <long>
+@@ -185,7 +185,7 @@
+       <applyto>/apps/gnome-terminal/profiles/Default/background_color</applyto>
+       <owner>gnome-terminal</owner>
+       <type>string</type>
+-      <default>#FFFFDD</default>
++      <default>#000000</default>
+       <locale name="C">
+          <short>Default color of terminal background</short>
+          <long>
+@@ -585,7 +585,7 @@
+       <applyto>/apps/gnome-terminal/profiles/Default/use_theme_colors</applyto>
+       <owner>gnome-terminal</owner>
+       <type>bool</type>
+-      <default>true</default>
++      <default>false</default>
+       <locale name="C">
+          <short>Whether to use the colors from the theme for the terminal widget</short>
+          <long>
