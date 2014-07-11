@@ -3,7 +3,7 @@
 Summary:	GNOME terminal
 Name:		gnome-terminal
 Version:	3.6.1
-Release:	6
+Release:	7
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/
