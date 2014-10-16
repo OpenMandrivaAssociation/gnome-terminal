@@ -15,6 +15,7 @@ BuildRequires:	itstool
 BuildRequires:	rarian
 BuildRequires:	xsltproc
 BuildRequires:	gnome-shell
+BuildRequires:	pkgconfig(dconf)
 BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(glib-2.0)
