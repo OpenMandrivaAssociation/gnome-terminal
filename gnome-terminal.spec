@@ -29,6 +29,7 @@ BuildRequires:	pkgconfig(ice)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(vte-2.91)
 BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(libnautilus-extension)
 
 %description
 This is the GNOME terminal emulator application.
