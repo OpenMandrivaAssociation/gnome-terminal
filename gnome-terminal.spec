@@ -13,7 +13,6 @@ Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/%{url_ver}/%{name}
 BuildRequires:	vala
 BuildRequires:	vala-devel
 BuildRequires:	vala-tools
-BuildRequires:	appdata-tools
 BuildRequires:	intltool
 BuildRequires:	itstool
 BuildRequires:	rarian
