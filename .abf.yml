@@ -1,5 +1,6 @@
 removed_sources:
   gnome-terminal-3.14.1.tar.xz: 2f5a2dad34a0764b26c580587b5158d7b732167b
   gnome-terminal-3.16.1.tar.xz: c32b31f5fc9215fab4825f1d81e9f3b895174452
-sources:
   gnome-terminal-3.18.1.tar.xz: fe8eb5738884bbf9ba8b55f15255be825578044b
+sources:
+  gnome-terminal-3.18.2.tar.xz: f0b22e58b5be229607d1cf7d722e4cc022413403
