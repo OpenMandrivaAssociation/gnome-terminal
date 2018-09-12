@@ -31,6 +31,7 @@ BuildRequires:	pkgconfig(vte-2.91)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(libnautilus-extension)
 BuildRequires:	pkgconfig(uuid)
+BuildRequires:  systemd
 
 %description
 This is the GNOME terminal emulator application.
@@ -69,4 +70,3 @@ fi
 %{_datadir}/metainfo/*gnome*.appdata.xml
 %{_datadir}/metainfo/*gnome*.metainfo.xml
 %{_userunitdir}/gnome-terminal-server.service
-
