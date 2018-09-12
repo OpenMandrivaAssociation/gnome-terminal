@@ -30,6 +30,7 @@ BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(vte-2.91)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(libnautilus-extension)
+BuildRequires:	pkgconfig(uuid)
 
 %description
 This is the GNOME terminal emulator application.
