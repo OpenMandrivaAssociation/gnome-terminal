@@ -63,7 +63,7 @@ fi
 %{_datadir}/applications/*
 %{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
 %{_libexecdir}/gnome-terminal-server
-%{_datadir}/appdata/gnome-terminal.appdata.xml
+#{_datadir}/appdata/gnome-terminal.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Terminal.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
