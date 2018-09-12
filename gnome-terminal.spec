@@ -1,5 +1,6 @@
 %define _disable_rebuild_configure 1
 %define url_ver %(echo %{version}|cut -d. -f1,2)
+%define _userunitdir /usr/lib/systemd/user/
 
 Summary:	GNOME terminal
 Name:		gnome-terminal
@@ -69,4 +70,4 @@ fi
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
 %{_datadir}/metainfo/*gnome*.appdata.xml
 %{_datadir}/metainfo/*gnome*.metainfo.xml
-%{systemd_libdir}/user/gnome-terminal-server.service
+%{_userunitdir}/gnome-terminal-server.service
