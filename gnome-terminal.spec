@@ -69,4 +69,4 @@ fi
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
 %{_datadir}/metainfo/*gnome*.appdata.xml
 %{_datadir}/metainfo/*gnome*.metainfo.xml
-%{_unitdir}/gnome-terminal-server.service
+%{systemd_libdir}/user/gnome-terminal-server.service
