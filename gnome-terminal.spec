@@ -1,9 +1,10 @@
 %define _disable_rebuild_configure 1
 %define url_ver %(echo %{version}|cut -d. -f1,2)
+%define _userunitdir /usr/lib/systemd/user/
 
 Summary:	GNOME terminal
 Name:		gnome-terminal
-Version:	 3.18.2
+Version:	3.28.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
@@ -30,6 +31,8 @@ BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(vte-2.91)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(libnautilus-extension)
+BuildRequires:	pkgconfig(uuid)
+BuildRequires:  systemd
 
 %description
 This is the GNOME terminal emulator application.
@@ -62,8 +65,9 @@ fi
 %{_datadir}/applications/*
 %{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
 %{_libexecdir}/gnome-terminal-server
-%{_datadir}/appdata/gnome-terminal.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Terminal.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
-
+%{_datadir}/metainfo/*gnome*.appdata.xml
+%{_datadir}/metainfo/*gnome*.metainfo.xml
+%{_userunitdir}/gnome-terminal-server.service
