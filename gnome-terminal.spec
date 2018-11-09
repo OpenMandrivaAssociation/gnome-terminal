@@ -4,8 +4,8 @@
 
 Summary:	GNOME terminal
 Name:		gnome-terminal
-Version:	3.28.2
-Release:	2
+Version:	3.30.2
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/
@@ -28,7 +28,7 @@ BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(ice)
 BuildRequires:	pkgconfig(sm)
-BuildRequires:	pkgconfig(vte-2.91)
+BuildRequires:	pkgconfig(vte-2.91) >= 0.54.1
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(libnautilus-extension)
 BuildRequires:	pkgconfig(uuid)
