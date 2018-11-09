@@ -4,7 +4,7 @@
 
 Summary:	GNOME terminal
 Name:		gnome-terminal
-Version:	3.30.1
+Version:	3.30.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
