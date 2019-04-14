@@ -11,6 +11,7 @@ Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires:	appstream-util
 BuildRequires:	vala
 BuildRequires:	vala-devel
 BuildRequires:	vala-tools
@@ -22,6 +23,8 @@ BuildRequires:	gnome-shell
 BuildRequires:	pkgconfig(dconf)
 BuildRequires:	pkgconfig(gnome-doc-utils)
 BuildRequires:	pkgconfig(gsettings-desktop-schemas)
+BuildRequires:	pkgconfig(gio-2.0) >= 2.33.2
+BuildRequires:	pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
 #for gtk-builder-convert
 BuildRequires:	pkgconfig(gtk+-2.0)
@@ -33,24 +36,40 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(libnautilus-extension)
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:  systemd
+BuildRequires:	libxml2-utils
+BuildRequires:	libxslt-proc
+
+Recommends:	%{name}-nautilus
 
 %description
 This is the GNOME terminal emulator application.
 
+%package nautilus
+Summary:	Open a terminal in a specified folder
+Group:		Graphical desktop/GNOME
+
+Provides:	nautilus-open-terminal = %{version}-%{release}
+Obsoletes:	nautilus-open-terminal < 0.20-6
+
+%description nautilus
+An extension for Nautilus which allows you to open a terminal in arbitrary
+local folders.
+
 %prep
 %setup -q
-%apply_patches
+%autopatch -p1
 
 %build
 %configure \
 	--disable-schemas-install \
 	--disable-migration \
+	--with-nautilus-extension \
 	--with-gtk=3.0
 
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %find_lang %{name} --with-gnome
 
@@ -70,4 +89,8 @@ fi
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
 %{_datadir}/metainfo/*gnome*.appdata.xml
 %{_datadir}/metainfo/*gnome*.metainfo.xml
+%{_iconsdir}/hicolor/*/apps/org.gnome.Terminal*.svg
 %{_userunitdir}/gnome-terminal-server.service
+
+%files nautilus
+%{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
