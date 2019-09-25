@@ -30,6 +30,7 @@ BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(ice)
+BuildRequires:	pkgconfig(libpcre2-8)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(vte-2.91) >= 0.54.1
 BuildRequires:	pkgconfig(x11)
