@@ -5,7 +5,7 @@
 Summary:	GNOME terminal
 Name:		gnome-terminal
 Version:	3.36.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/
@@ -72,11 +72,6 @@ local folders.
 %make_install
 
 %find_lang %{name} --with-gnome
-
-%post
-if [ "$1" = "2" ]; then
-	update-alternatives --remove xvt %{_bindir}/gnome-terminal
-fi
 
 %files -f %{name}.lang
 %doc AUTHORS NEWS HACKING
