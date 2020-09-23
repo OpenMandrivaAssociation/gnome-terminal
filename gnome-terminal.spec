@@ -85,6 +85,7 @@ local folders.
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
 %{_datadir}/metainfo/*gnome*.appdata.xml
 %{_datadir}/metainfo/*gnome*.metainfo.xml
+%{_mandir}/man1/gnome-terminal.1.*
 %{_iconsdir}/hicolor/*/apps/org.gnome.Terminal*.svg
 %{_userunitdir}/gnome-terminal-server.service
 
