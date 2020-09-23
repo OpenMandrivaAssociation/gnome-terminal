@@ -12,6 +12,7 @@ Url:		http://www.gnome.org/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/%{url_ver}/%{name}-%{version}.tar.xz
 
 BuildRequires:	appstream-util
+BuildRequires:  docbook-xsl
 BuildRequires:	vala
 BuildRequires:	vala-devel
 BuildRequires:	vala-tools
