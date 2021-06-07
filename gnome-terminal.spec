@@ -4,7 +4,7 @@
 
 Summary:	GNOME terminal
 Name:		gnome-terminal
-Version:	3.40.1
+Version:	3.40.2
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
@@ -79,6 +79,7 @@ local folders.
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
+%{_libdir}/gnome-terminal/gschemas.compiled
 %{_libexecdir}/gnome-terminal-server
 %{_datadir}/dbus-1/services/org.gnome.Terminal.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
