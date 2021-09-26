@@ -73,7 +73,7 @@ local folders.
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc AUTHORS NEWS HACKING
+%doc AUTHORS
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
@@ -82,7 +82,7 @@ local folders.
 %{_datadir}/dbus-1/services/org.gnome.Terminal.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
-%{_datadir}/metainfo/*gnome*.appdata.xml
+#{_datadir}/metainfo/*gnome*.appdata.xml
 %{_datadir}/metainfo/*gnome*.metainfo.xml
 %{_mandir}/man1/gnome-terminal.1.*
 %{_iconsdir}/hicolor/*/apps/org.gnome.Terminal*.svg
