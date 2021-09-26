@@ -11,6 +11,7 @@ Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/%{url_ver}/%{name}-%{version}.tar.xz
 
+BuildRequires:	meson
 BuildRequires:	appstream-util
 BuildRequires:  docbook-xsl
 BuildRequires:	vala
@@ -62,15 +63,12 @@ local folders.
 %autopatch -p1
 
 %build
-%configure \
-	--disable-migration \
-	--with-nautilus-extension \
-	--with-gtk=3.0
+%meson
 
-%make_build
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %find_lang %{name} --with-gnome
 
