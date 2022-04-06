@@ -73,7 +73,6 @@ local folders.
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
-%doc AUTHORS
 %{_bindir}/*
 %{_datadir}/applications/*
 %{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
