@@ -1,0 +1,12 @@
+diff -uraN gnome-terminal-3.44.1/src/org.gnome.Terminal.gschema.xml omv-gnome-terminal-3.44.1/src/org.gnome.Terminal.gschema.xml
+--- gnome-terminal-3.44.1/src/org.gnome.Terminal.gschema.xml	2022-05-28 19:21:28.000000000 +0200
++++ omv-gnome-terminal-3.44.1/src/org.gnome.Terminal.gschema.xml	2022-08-13 17:08:35.859585534 +0200
+@@ -318,7 +318,7 @@
+       <summary>Palette for terminal applications</summary>
+     </key>
+     <key name="font" type="s">
+-      <default>'Monospace 12'</default>
++      <default>'DejaVu Sans Mono 12'</default>
+       <summary>A Pango font name and size</summary>
+     </key>
+     <key name="backspace-binding" enum="org.gnome.Terminal.EraseBinding">
