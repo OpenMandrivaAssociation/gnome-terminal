@@ -10,6 +10,7 @@ License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/%{url_ver}/%{name}-%{version}.tar.xz
+Patch0:   gnome-terminal-font-change.patch
 
 BuildRequires:	meson
 BuildRequires:	appstream-util
