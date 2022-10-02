@@ -4,12 +4,14 @@
 
 Summary:	GNOME terminal
 Name:		gnome-terminal
-Version:	3.44.1
-Release:	2
+Version:	3.46.2
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/%{url_ver}/%{name}-%{version}.tar.xz
+# Source at gnome.org is no longer updated for gnome-terminal... use package from gitlab instead
+#Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:  https://gitlab.gnome.org/GNOME/gnome-terminal/-/archive/%{version}/gnome-terminal-%{version}.tar.bz2
 
 BuildRequires:	meson
 BuildRequires:	appstream-util
@@ -63,7 +65,7 @@ local folders.
 %autopatch -p1
 
 %build
-%meson
+%meson -Dnautilus_extension=false
 
 %meson_build
 
@@ -75,9 +77,10 @@ local folders.
 %files -f %{name}.lang
 %{_bindir}/*
 %{_datadir}/applications/*
-%{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
+#{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
 %{_libdir}/gnome-terminal/gschemas.compiled
 %{_libexecdir}/gnome-terminal-server
+%{_libexecdir}/gnome-terminal-preferences
 %{_datadir}/dbus-1/services/org.gnome.Terminal.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
@@ -88,4 +91,4 @@ local folders.
 %{_userunitdir}/gnome-terminal-server.service
 
 %files nautilus
-%{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
+#{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
