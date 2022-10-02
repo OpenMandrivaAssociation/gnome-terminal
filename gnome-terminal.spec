@@ -77,7 +77,7 @@ local folders.
 %files -f %{name}.lang
 %{_bindir}/*
 %{_datadir}/applications/*
-%{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
+#{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
 %{_libdir}/gnome-terminal/gschemas.compiled
 %{_libexecdir}/gnome-terminal-server
 %{_datadir}/dbus-1/services/org.gnome.Terminal.service
