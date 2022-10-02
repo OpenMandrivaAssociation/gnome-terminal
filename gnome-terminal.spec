@@ -65,7 +65,7 @@ local folders.
 %autopatch -p1
 
 %build
-%meson
+%meson -Dnautilus_extension=false
 
 %meson_build
 
