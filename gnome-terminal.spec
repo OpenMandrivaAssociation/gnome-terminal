@@ -4,12 +4,14 @@
 
 Summary:	GNOME terminal
 Name:		gnome-terminal
-Version:	3.44.1
-Release:	2
+Version:	3.46.2
+Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/
-Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/%{url_ver}/%{name}-%{version}.tar.xz
+# Source at gnome.org is no longer updated for gnome-terminal... use package from gitlab instead
+#Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/%{url_ver}/%{name}-%{version}.tar.xz
+Source0:  https://gitlab.gnome.org/GNOME/gnome-terminal/-/archive/%{version}/gnome-terminal-%{version}.tar.bz2
 
 BuildRequires:	meson
 BuildRequires:	appstream-util
