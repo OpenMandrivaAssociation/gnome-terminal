@@ -90,4 +90,4 @@ local folders.
 %{_userunitdir}/gnome-terminal-server.service
 
 %files nautilus
-%{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
+#{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
