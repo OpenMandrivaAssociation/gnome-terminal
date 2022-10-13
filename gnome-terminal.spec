@@ -38,7 +38,7 @@ BuildRequires:	pkgconfig(libpcre2-8)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(vte-2.91) >= 0.54.1
 BuildRequires:	pkgconfig(x11)
-BuildRequires:	pkgconfig(libnautilus-extension)
+BuildRequires:	pkgconfig(libnautilus-extension-4)
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:  systemd
 BuildRequires:	libxml2-utils
@@ -65,7 +65,7 @@ local folders.
 %autopatch -p1
 
 %build
-%meson -Dnautilus_extension=false
+%meson -Dnautilus_extension=true
 
 %meson_build
 
