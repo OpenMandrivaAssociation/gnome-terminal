@@ -5,7 +5,7 @@
 Summary:	GNOME terminal
 Name:		gnome-terminal
 Version:	3.46.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		http://www.gnome.org/
@@ -38,7 +38,7 @@ BuildRequires:	pkgconfig(libpcre2-8)
 BuildRequires:	pkgconfig(sm)
 BuildRequires:	pkgconfig(vte-2.91) >= 0.54.1
 BuildRequires:	pkgconfig(x11)
-BuildRequires:	pkgconfig(libnautilus-extension)
+BuildRequires:	pkgconfig(libnautilus-extension-4)
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:  systemd
 BuildRequires:	libxml2-utils
@@ -65,7 +65,7 @@ local folders.
 %autopatch -p1
 
 %build
-%meson -Dnautilus_extension=false
+%meson -Dnautilus_extension=true
 
 %meson_build
 
@@ -77,18 +77,16 @@ local folders.
 %files -f %{name}.lang
 %{_bindir}/*
 %{_datadir}/applications/*
-#{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
 %{_libdir}/gnome-terminal/gschemas.compiled
 %{_libexecdir}/gnome-terminal-server
 %{_libexecdir}/gnome-terminal-preferences
 %{_datadir}/dbus-1/services/org.gnome.Terminal.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
-#{_datadir}/metainfo/*gnome*.appdata.xml
 %{_datadir}/metainfo/*gnome*.metainfo.xml
 %{_mandir}/man1/gnome-terminal.1.*
 %{_iconsdir}/hicolor/*/apps/org.gnome.Terminal*.svg
 %{_userunitdir}/gnome-terminal-server.service
 
 %files nautilus
-#{_libdir}/nautilus/extensions-3.0/libterminal-nautilus.so
+%{_libdir}/nautilus/extensions-4/libterminal-nautilus.so
