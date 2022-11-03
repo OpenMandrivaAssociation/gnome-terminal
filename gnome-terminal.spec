@@ -80,6 +80,7 @@ local folders.
 %{_libdir}/gnome-terminal/gschemas.compiled
 %{_libexecdir}/gnome-terminal-server
 %{_libexecdir}/gnome-terminal-preferences
+%{_datadir}/xdg-terminals/org.gnome.Terminal.desktop
 %{_datadir}/dbus-1/services/org.gnome.Terminal.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
