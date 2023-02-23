@@ -4,7 +4,7 @@
 
 Summary:	GNOME terminal
 Name:		gnome-terminal
-Version:	3.46.7
+Version:	3.46.8
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
@@ -12,6 +12,9 @@ Url:		http://www.gnome.org/
 # Source at gnome.org is no longer updated for gnome-terminal... use package from gitlab instead
 #Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/%{url_ver}/%{name}-%{version}.tar.xz
 Source0:  https://gitlab.gnome.org/GNOME/gnome-terminal/-/archive/%{version}/gnome-terminal-%{version}.tar.bz2
+
+# Force dark theme
+Source1: org.gnome.Terminal.gschema.override
 
 BuildRequires:	meson
 BuildRequires:	appstream-util
@@ -72,6 +75,8 @@ local folders.
 %install
 %meson_install
 
+install -p -m 644 %{SOURCE1} %{buildroot}%{_datadir}/glib-2.0/schemas
+
 %find_lang %{name} --with-gnome
 
 %files -f %{name}.lang
@@ -83,6 +88,7 @@ local folders.
 %{_datadir}/xdg-terminals/org.gnome.Terminal.desktop
 %{_datadir}/dbus-1/services/org.gnome.Terminal.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
+%{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.override
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
 %{_datadir}/metainfo/*gnome*.metainfo.xml
 %{_mandir}/man1/gnome-terminal.1.*
