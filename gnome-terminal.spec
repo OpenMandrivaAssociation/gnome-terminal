@@ -5,7 +5,7 @@
 Summary:	GNOME terminal
 Name:		gnome-terminal
 Version:	3.56.2
-Release:	1
+Release:	2
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		https://www.gnome.org/
@@ -69,7 +69,10 @@ local folders.
 %autopatch -p1
 
 %build
-%meson -Dnautilus_extension=true
+%meson \
+        -Dnautilus_extension=true \
+        -Dgtk4=true \
+        -Dgtk3=false
 
 %meson_build
 
