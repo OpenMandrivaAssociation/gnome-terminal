@@ -77,7 +77,7 @@ local folders.
 %install
 %meson_install
 
-install -p -m 644 %{SOURCE1} %{buildroot}%{_datadir}/glib-2.0/schemas
+#install -p -m 644 %{SOURCE1} %{buildroot}%{_datadir}/glib-2.0/schemas
 
 %find_lang %{name} --with-gnome
 
@@ -90,7 +90,7 @@ install -p -m 644 %{SOURCE1} %{buildroot}%{_datadir}/glib-2.0/schemas
 %{_datadir}/xdg-terminals/org.gnome.Terminal.desktop
 %{_datadir}/dbus-1/services/org.gnome.Terminal.service
 %{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.xml
-%{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.override
+#{_datadir}/glib-2.0/schemas/org.gnome.Terminal.gschema.override
 %{_datadir}/gnome-shell/search-providers/gnome-terminal-search-provider.ini
 %{_datadir}/metainfo/*gnome*.metainfo.xml
 %{_mandir}/man1/gnome-terminal.1.*
