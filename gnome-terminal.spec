@@ -2,19 +2,22 @@
 %define url_ver %(echo %{version}|cut -d. -f1,2)
 %define _userunitdir /usr/lib/systemd/user/
 
+%define git .20250914
+
 Summary:	GNOME terminal
 Name:		gnome-terminal
-Version:	3.58.0
+Version:	3.58.0%{git}
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/GNOME
 Url:		https://www.gnome.org/
 # Source at gnome.org is no longer updated for gnome-terminal... use package from gitlab instead
 #Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/gnome-terminal/%{url_ver}/%{name}-%{version}.tar.xz
-Source0:  https://gitlab.gnome.org/GNOME/gnome-terminal/-/archive/%{version}/gnome-terminal-%{version}.tar.bz2
+#Source0:  https://gitlab.gnome.org/GNOME/gnome-terminal/-/archive/%{version}/gnome-terminal-%{version}.tar.bz2
+Source0:  https://gitlab.gnome.org/GNOME/gnome-terminal/-/archive/master/gnome-terminal-master.tar.bz2
 
 # Force dark theme
-Source1: org.gnome.Terminal.gschema.override
+#Source1: org.gnome.Terminal.gschema.override
 
 BuildRequires:	meson
 BuildRequires:	appstream-util
@@ -33,9 +36,7 @@ BuildRequires:	pkgconfig(gsettings-desktop-schemas)
 BuildRequires:	pkgconfig(gio-2.0) >= 2.33.2
 BuildRequires:	pkgconfig(gio-unix-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
-#for gtk-builder-convert
-BuildRequires:	pkgconfig(gtk+-2.0)
-BuildRequires:	pkgconfig(gtk+-3.0)
+BuildRequires:	pkgconfig(gtk4)
 BuildRequires:	pkgconfig(ice)
 BuildRequires:  pkgconfig(libhandy-1)
 BuildRequires:	pkgconfig(libpcre2-8)
@@ -65,8 +66,7 @@ An extension for Nautilus which allows you to open a terminal in arbitrary
 local folders.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -n gnome-terminal-master -p1
 
 %build
 %meson -Dnautilus_extension=true
