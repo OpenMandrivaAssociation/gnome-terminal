@@ -41,7 +41,7 @@ BuildRequires:	pkgconfig(ice)
 BuildRequires:  pkgconfig(libhandy-1)
 BuildRequires:	pkgconfig(libpcre2-8)
 BuildRequires:	pkgconfig(sm)
-BuildRequires:	pkgconfig(vte-2.91) >= 0.54.1
+BuildRequires:	pkgconfig(vte-2.91-gtk4)
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(libnautilus-extension-4)
 BuildRequires:	pkgconfig(uuid)
