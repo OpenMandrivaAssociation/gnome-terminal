@@ -45,7 +45,7 @@ BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(libnautilus-extension-4)
 BuildRequires:	pkgconfig(uuid)
 BuildRequires:  systemd
-BuildRequires:	libxml2-utils
+BuildRequires:	libxml2-utils >= 2.15.2
 BuildRequires:	libxslt-proc
 
 Recommends:	%{name}-nautilus
